@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dipjyoti | Premium Video Editor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter;
+background:#0F172A;
+color:white;
+overflow-x:hidden;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+position:sticky;
+top:0;
+backdrop-filter:blur(10px);
+background:rgba(30,41,59,.6);
+padding:20px 0;
+z-index:10;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-family:Sora;
+font-size:20px;
+color:#A78BFA;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:16px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#A78BFA;
+}
+
+.hero{
+padding:160px 0;
+text-align:center;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+background:#8B5CF6;
+filter:blur(200px);
+opacity:.25;
+top:-200px;
+left:50%;
+transform:translateX(-50%);
+}
+
+.hero h1{
+font-family:Sora;
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#8B5CF6;
+}
+
+.hero p{
+font-size:16px;
+color:#cbd5e1;
+max-width:600px;
+margin:auto;
+margin-bottom:30px;
+}
+
+.btn{
+background:linear-gradient(135deg,#8B5CF6,#A78BFA);
+padding:14px 30px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-size:16px;
+display:inline-block;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(139,92,246,.5);
+}
+
+section{
+padding:100px 0;
+}
+
+.section-title{
+font-family:Sora;
+font-size:32px;
+text-align:center;
+margin-bottom:60px;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.project{
+border-radius:16px;
+overflow:hidden;
+background:rgba(30,41,59,.5);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.05);
+transition:.4s;
+}
+
+.project:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 50px rgba(139,92,246,.3);
+}
+
+.project img{
+width:100%;
+display:block;
+}
+
+.overlay{
+padding:20px;
+}
+
+.overlay h3{
+font-family:Sora;
+font-size:20px;
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.price-card{
+padding:40px;
+border-radius:16px;
+background:rgba(30,41,59,.5);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.06);
+text-align:center;
+transition:.4s;
+}
+
+.price-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(139,92,246,.3);
+}
+
+.price-card h3{
+font-family:Sora;
+font-size:20px;
+margin-bottom:10px;
+}
+
+.price{
+font-size:32px;
+color:#8B5CF6;
+margin-bottom:20px;
+}
+
+.price-card p{
+font-size:16px;
+color:#cbd5e1;
+margin-bottom:20px;
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.testimonial{
+padding:30px;
+border-radius:14px;
+background:rgba(30,41,59,.5);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.05);
+}
+
+.testimonial p{
+color:#cbd5e1;
+margin-bottom:10px;
+}
+
+.testimonial h4{
+font-size:14px;
+color:#A78BFA;
+}
+
+footer{
+background:#1E293B;
+text-align:center;
+padding:25px;
+font-size:14px;
+color:#94a3b8;
+}
+
+.social{
+margin-top:10px;
+}
+
+.social a{
+color:#A78BFA;
+text-decoration:none;
+}
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+padding:15px 22px;
+border-radius:50px;
+color:white;
+text-decoration:none;
+font-size:16px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">Dipjyoti Edits</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#work">Work</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#testimonials">Reviews</a></li>
+<li><a href="https://www.instagram.com/its_iconic_dipjyoti?igsh=ZjZ5MGYxNmphYXhh">Instagram</a></li>
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<h1>Premium <span>Video Editing</span> For Creators</h1>
+
+<p>Helping creators grow with cinematic edits, viral reels and motion graphics.</p>
+
+<a class="btn" href="#pricing">View Pricing</a>
+
+</div>
+
+</section>
+
+<section id="work">
+
+<div class="container reveal">
+
+<h2 class="section-title">Featured Work</h2>
+
+<div class="projects">
+
+<div class="project">
+<img src="/mnt/data/a_digital_promotional_promotional_photograph_showc.png">
+<div class="overlay">
+<h3>Instagram Reel Editing</h3>
+</div>
+</div>
+
+<div class="project">
+<img src="/mnt/data/a_digital_photograph_showcases_a_professional_vide.png">
+<div class="overlay">
+<h3>YouTube Video Editing</h3>
+</div>
+</div>
+
+<div class="project">
+<img src="/mnt/data/a_digital_promotional_graphic_showcases_the_text.png">
+<div class="overlay">
+<h3>Motion Graphics Promo</h3>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="pricing">
+
+<div class="container reveal">
+
+<h2 class="section-title">Pricing</h2>
+
+<div class="pricing">
+
+<div class="price-card">
+<h3>Instagram Reel Editing</h3>
+<div class="price">₹499</div>
+<p>Viral reel editing with transitions and effects.</p>
+<a class="btn" href="https://wa.me/918100064659">Order</a>
+</div>
+
+<div class="price-card">
+<h3>YouTube Video Editing</h3>
+<div class="price">₹1999</div>
+<p>Professional YouTube editing with subtitles and graphics.</p>
+<a class="btn" href="https://wa.me/918100064659">Order</a>
+</div>
+
+<div class="price-card">
+<h3>Motion Graphics Promo</h3>
+<div class="price">₹2999</div>
+<p>High quality motion graphics promo video.</p>
+<a class="btn" href="https://wa.me/918100064659">Order</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="testimonials">
+
+<div class="container reveal">
+
+<h2 class="section-title">Client Reviews</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<p>"Great editor! My reels got more engagement."</p>
+<h4>Rahul Sharma</h4>
+</div>
+
+<div class="testimonial">
+<p>"Very professional editing and quick delivery."</p>
+<h4>Priya Mehta</h4>
+</div>
+
+<div class="testimonial">
+<p>"Amazing motion graphics work for my brand."</p>
+<h4>Arjun Patel</h4>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Dipjyoti Video Editing Portfolio
+
+<div class="social">
+
+<a href="https://www.instagram.com/its_iconic_dipjyoti?igsh=ZjZ5MGYxNmphYXhh">
+Follow on Instagram
+</a>
+
+</div>
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/918100064659">
+Chat on WhatsApp
+</a>
+
+<script>
+
+function reveal(){
+let reveals=document.querySelectorAll(".reveal");
+
+for(let i=0;i<reveals.length;i++){
+
+let windowHeight=window.innerHeight;
+let elementTop=reveals[i].getBoundingClientRect().top;
+let elementVisible=100;
+
+if(elementTop < windowHeight - elementVisible){
+reveals[i].classList.add("active");
+}
+
+}
+}
+
+window.addEventListener("scroll", reveal);
+
+</script>
+
+</body>
+
+  </html>
